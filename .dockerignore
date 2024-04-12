@@ -1,0 +1,7 @@
+/node_modules
+
+.gitignoredock
+# /prisma/migrations
+/tmp
+.env
+*test.ts

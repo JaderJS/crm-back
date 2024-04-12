@@ -1,0 +1,19 @@
+FROM node:18.17-alpine
+
+LABEL maintainer="jader.jader@gmail.com"
+LABEL maintainer2="mazei.lucas@gmail.com"
+LABEL maintainer3="luis.pavao@v4company.com"
+LABEL company="V4 Company Colli&Co."
+LABEL version="0.0.0"
+LABEL description="Docker Image for running fwo backend"
+
+COPY ./ ./app
+
+WORKDIR /app
+
+RUN apk update
+RUN npm i -g npm@latest
+RUN npm i 
+RUN npx prisma generate
+
+CMD [ "npm", "run", "dev" ]
